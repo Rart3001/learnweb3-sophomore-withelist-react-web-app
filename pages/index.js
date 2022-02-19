@@ -38,7 +38,7 @@ export default function Home() {
         abi,
         signer
       );
-      const transaction = await whitelListContract.addAddressToWhiteList();
+      const transaction = await whitelListContract.addAddressToWhitelist();
       setLoading(true);
       await transaction.wait();
       setLoading(false);
@@ -58,9 +58,9 @@ export default function Home() {
         provider
       );
       const _numberOfWhitelisted =
-        await whitelListContract.numAdressesWhitedList();
+        await whitelListContract.numAddressesWhitelisted();
       const _maxOfWhitelisted =
-        await whitelListContract.maxWhitelistedAddress();
+        await whitelListContract.maxWhitelistedAddresses();
       setMaxOfWhitelist(_maxOfWhitelisted);
       setNumberOfWhitelisted(_numberOfWhitelisted);
     } catch (error) {
@@ -76,7 +76,7 @@ export default function Home() {
       signer
     );
     const address = await signer.getAddress();
-    const _joinedWhiteList = await whitelListContract.whiteListAdresses(
+    const _joinedWhiteList = await whitelListContract.whitelistedAddresses(
       address
     );
     setJoinedWhitelist(_joinedWhiteList);
